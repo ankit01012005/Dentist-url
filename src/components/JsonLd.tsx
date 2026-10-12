@@ -12,7 +12,7 @@ export default function JsonLd() {
     description: site.seo.description,
     url: site.seo.siteUrl,
     telephone: b.phoneRaw,
-    email: b.email,
+    email: b.email || undefined,
     image: site.seo.ogImage,
     logo: `${site.seo.siteUrl}/icon.svg`,
     priceRange: b.priceRange,

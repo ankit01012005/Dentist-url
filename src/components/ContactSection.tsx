@@ -76,7 +76,7 @@ export default function ContactSection() {
                 <div>
                   <h3 className="text-xs font-semibold uppercase tracking-[0.14em] text-muted">{l.phone}</h3>
                   <a href={telLink} className="mt-1 block font-medium text-brand-dark hover:text-brand">{b.phoneDisplay}</a>
-                  <a href={`mailto:${b.email}`} className="mt-0.5 flex items-center gap-1.5 break-all text-sm text-muted hover:text-brand"><Mail size={13} aria-hidden="true" />{b.email}</a>
+                  {b.email && <a href={`mailto:${b.email}`} className="mt-0.5 flex items-center gap-1.5 break-all text-sm text-muted hover:text-brand"><Mail size={13} aria-hidden="true" />{b.email}</a>}
                 </div>
               </div>
             </div>
