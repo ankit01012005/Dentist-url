@@ -13,7 +13,7 @@ export default function Footer() {
     { href: b.social.facebook, label: "Facebook", Icon: FacebookIcon },
     { href: b.social.youtube, label: "YouTube", Icon: YoutubeIcon },
     { href: whatsappLink(), label: "WhatsApp", Icon: WhatsAppIcon },
-  ];
+  ].filter((s) => s.href);
 
   return (
     <footer className="grain relative overflow-hidden bg-brand-dark pb-28 pt-16 text-white/75 md:pb-10 md:pt-20">
@@ -68,7 +68,7 @@ export default function Footer() {
             <ul className="mt-5 space-y-4 text-sm">
               <li className="flex gap-3"><MapPin size={18} className="mt-0.5 shrink-0 text-accent" aria-hidden="true" /><a href={b.mapLinkUrl} target="_blank" rel="noopener noreferrer" className="hover:text-accent">{fullAddress()}</a></li>
               <li className="flex gap-3"><Phone size={18} className="mt-0.5 shrink-0 text-accent" aria-hidden="true" /><a href={telLink} className="hover:text-accent">{b.phoneDisplay}</a></li>
-              <li className="flex gap-3"><Mail size={18} className="mt-0.5 shrink-0 text-accent" aria-hidden="true" /><a href={`mailto:${b.email}`} className="break-all hover:text-accent">{b.email}</a></li>
+              {b.email && <li className="flex gap-3"><Mail size={18} className="mt-0.5 shrink-0 text-accent" aria-hidden="true" /><a href={`mailto:${b.email}`} className="break-all hover:text-accent">{b.email}</a></li>}
               <li className="flex gap-3"><Clock size={18} className="mt-0.5 shrink-0 text-accent" aria-hidden="true" /><span>{b.hoursSummary}</span></li>
             </ul>
           </div>
